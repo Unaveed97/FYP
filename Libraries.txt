@@ -1,0 +1,11 @@
+react bative navigation:
+npm install react-navigation
+
+react native gesture handler:
+npm install react-native-gesture-handler
+
+react Native responsive screen
+npm install react-native-responsive-screen --save
+
+react native safe area context
+npm install --save react-native-safe-area-context
