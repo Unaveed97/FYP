@@ -76,68 +76,84 @@ export default class ViewProfile extends Component{
                             tapToClose={true}
                             openDrawerOffset={0.35}
                             styles={drawerStyles}>
-                            <View style={styles.headerContainer}>
-                                <View style={styles.menuButton}>
-                                    <TouchableOpacity
-                                        onPress={this.openDrawer.bind(this)}>
-                                        <Image style={{width:50, height:34.5, marginTop:20,marginLeft:20}} source={require('../Images/DrawerButton.png')} />
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                            {/* //Top View */}
-                            <View style={styles.FullBody}>
-                                <View>
-                                    <LinearGradient colors={['#0f1654','#4c669f', '#3b5998']} style={styles.linearGradient}>
-                                        <View>
-                                            <Image source={require('../Images/me.png')} style={styles.MeLogo}/>
-                                        </View>
-                                    </LinearGradient>
-                                </View>
-                            </View>
-                            {/* //Bottom View */}
-                            <View >
-                                <Card style={styles.InfoCard}>
-                                    <View >
-                                        <View>
-                                            <CardItem style={styles.FormCard}>
-                                                <Text style={styles.HeadText}>Personal Info</Text>
-                                                <ScrollView>
-                                                    <View style={styles.InputFeilds}>
-                                                        <TextInput mode='flat' style={styles.input2} label='First Name'/>
-                                                        <TextInput mode='flat' style={styles.input3} label='Last Name'/>
-                                                        <TextInput mode='flat' style={styles.input3} label='Contact Number'/>
-                                                        <TextInput mode='flat' style={styles.input3} label='Address'/>
-                                                        <TextInput mode='flat' style={styles.input3} label='Email'/>
-                                                    </View>    
-                                                </ScrollView>
-                                            </CardItem>
-                                        </View>
+                                
+                            <ScrollView>
+                                <View style={styles.headerContainer}>
+                                    <View style={styles.menuButton}>
+                                        <TouchableOpacity
+                                            onPress={this.openDrawer.bind(this)}>
+                                            <Image style={{width:50, height:34.5, marginTop:20,marginLeft:20}} source={require('../Images/DrawerButton.png')} />
+                                        </TouchableOpacity>
                                     </View>
-                                    {/*Bottom buttons*/}
+                                </View>
+                                {/* //Top View */}
+                                <View style={styles.FullBody}>
                                     <View>
-                                        <CardItem style={styles.BtnCard}>
-                                            <View style={styles.BtnView}>
-                                                <View style={styles.BottomBtnProgress}>    
+                                        <LinearGradient colors={['#0f1654','#4c669f', '#3b5998']} style={styles.linearGradient}>
+                                            <View>
+                                                <Image source={require('../Images/me.png')} style={styles.MeLogo}/>
+                                            </View>
+                                        </LinearGradient>
+                                    </View>
+                                </View>
+                                {/* //Bottom View */}
+                                <View>
+                                    <Card style={styles.InfoCard}>
+                                        {/* Personal Infor Card*/}
+                                        <Card style={styles.PersInfo}>
+                                            <Text style={styles.HeadText}>Personal Info</Text>
+                                            <Card style={styles.DisplayFeild1}>
+                                                <TextInput mode='flat' style={styles.inputField} label='First Name'  editable={false} selectTextOnFocus={false}/>
+                                                <TextInput mode='flat' style={styles.inputField} label='Last Name'   editable={false} selectTextOnFocus={false}/>
+                                                <TextInput mode='flat' style={styles.inputField} label='Contact Number' editable={false} selectTextOnFocus={false} />
+                                                <TextInput mode='flat' style={styles.inputField} label='Address'  editable={false} selectTextOnFocus={false}/>
+                                                <TextInput mode='flat' style={styles.inputField} label='Email' editable={false} selectTextOnFocus={false}/>
+                                            </Card>    
+                                        </Card>
+
+                                        {/* Acadmic Infor Card*/}
+                                        <Card style={styles.AcadInfo}>
+                                            <Text style={styles.HeadText}>Acadmic Info</Text>
+                                            <Card style={styles.DisplayFeild2}>
+                                                <TextInput mode='flat' style={styles.inputField} label='Bachlors Degree'  editable={false} selectTextOnFocus={false}/>
+                                                <TextInput mode='flat' style={styles.inputField} label='Institution Name'   editable={false} selectTextOnFocus={false}/>
+                                                <TextInput mode='flat' style={styles.inputField} label='Duration From' editable={false} selectTextOnFocus={false} />
+                                                <TextInput mode='flat' style={styles.inputField} label='Duration To'  editable={false} selectTextOnFocus={false}/>   
+                                            </Card>
+                                        </Card>
+                                        
+                                        {/* Job Infor Card*/}
+                                        <Card style={styles.SkillInfo}>
+                                        <Text style={styles.HeadText}>Profesional Info</Text>
+                                            <Card style={styles.DisplayFeild3}>
+                                                <TextInput mode='flat' style={styles.inputField} label='Working Experiance'  editable={false} selectTextOnFocus={false}/>
+                                                <TextInput mode='flat' style={styles.inputField} label='Organization Name'   editable={false} selectTextOnFocus={false}/>
+                                                <TextInput mode='flat' style={styles.inputField} label='Working Designation' editable={false} selectTextOnFocus={false} />
+                                                <TextInput mode='flat' style={styles.inputField} label='Working Duration'  editable={false} selectTextOnFocus={false}/>   
+                                                <TextInput mode='flat' multiline={true} style={styles.inputField} label='Skills Discription'  editable={false} selectTextOnFocus={false}/>
+                                                <TextInput mode='flat' multiline={true} style={styles.inputField} label='Extra Curlicular Discription'  editable={false} selectTextOnFocus={false}/>
+                                            </Card>
+                                        </Card>
+
+                                        {/* buttons Card*/}
+                                        <View>
+                                            <CardItem style={styles.BtnCard}>
                                                     <LinearGradient colors={['#4c669f', '#0f1654', '#3b5998']} style={styles.BtnGradiant}>
-                                                        <TouchableOpacity style={styles.Btn} >
-                                                            <Text style={styles.BtnText1}>Edit Profile</Text>
-                                                        </TouchableOpacity>
-                                                    </LinearGradient>   
-                                                    <LinearGradient colors={['#4c669f','#0f1654', '#3b5998']} style={styles.BtnGradiant}>
-                                                        <TouchableOpacity style={styles.Btn}>
-                                                            <Text style={styles.BtnText2}>View CV</Text>
+                                                        <TouchableOpacity style={styles.BtnEdit}>
+                                                            <Text style={styles.BtnsText}>Edit Profile</Text>
                                                         </TouchableOpacity>
                                                     </LinearGradient>
-                                                </View>
-                                            </View>
-                                        </CardItem>
-                                    </View> 
-                                    
-                                </Card>
-                            </View>
-                            
+                                                    <LinearGradient colors={['#4c669f', '#0f1654', '#3b5998']} style={styles.BtnGradiant}>
+                                                        <TouchableOpacity style={styles.BtnView}>
+                                                            <Text style={styles.BtnsText}>View Cv</Text>
+                                                        </TouchableOpacity>
+                                                    </LinearGradient>   
+                                            </CardItem>
+                                        </View>
+                                    </Card>
+                                </View>
+                            </ScrollView>
                         </Drawer>
-
                     </View>
                 </KeyboardAvoidingView>
             </Container>
@@ -199,18 +215,11 @@ const styles=StyleSheet.create({
         backgroundColor: 'white',
         elevation:25,
     },
-    
     DrawerImage: {
         height: hp('20%'),
         width: wp('100%'),
         opacity:0.5,
         elevation:2,
-    },
-    effect:{
-        height: hp('20%'),
-        width: wp('100%'),
-        backgroundColor:'#0f1654',
-        position: 'absolute'
     },
     DrawerFooter:{
         height: hp('10%'),
@@ -240,92 +249,121 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         alignSelf:'center',
     },
-    InfoCard:{
-        height:hp('65%'),
-        width:wp('90%'),
+    InfoCard: {
+        flex: 1,
+        alignSelf:'center',
+        height: hp('146%'),
+        width: wp('92%'),
         marginTop:-140,
+        elevation: 20,
         borderRadius:15,
-        alignSelf:'center',
-        justifyContent:'center',
-        alignItems:'center',
-        backgroundColor:'rgb(250,250,250)',
-        elevation:10,
+        flexDirection:'column',
     },
-    FormCard: {
-        height:hp('50%'),
+    CardItems: {
+        flex: 2,
+        flexDirection:'column',
+    },
+    PersInfo: {
+        height:hp('40%'),
         width:wp('85%'),
-        marginTop:-70,
         backgroundColor:'rgb(245,245,245)',
+        marginTop:15,
+        elevation:10,
         borderRadius:15,
         alignSelf:'center',
-        flexDirection: 'column',
-        justifyContent:'center',
-        alignItems:'center',
     },
-    HeadText: {
-        fontSize:15,
-        fontWeight:'bold',
-        color:'rgba(0,0,0,0.5)'
-    },
-    InputFeilds: {
-        justifyContent:'center',
-        alignItems:'center',
-        borderRadius:20,
-    },
-    input3: {
-        width:wp('75%'),
-        backgroundColor: '#e8eaf6',
-        borderColor: 'rgba(0,0,0,0.2)',
+    AcadInfo: {
+        height:hp('33.5%'),
+        width:wp('85%'),
+        backgroundColor:'rgb(245,245,245)',
         marginTop:15,
+        elevation:10,
+        borderRadius:15,
+        alignSelf:'center',
     },
-    input2: {
-        width:wp('75%'),
-        backgroundColor: '#e8eaf6',
-        borderColor: 'rgba(0,0,0,0.2)',
+    SkillInfo: {
+        height:hp('46.5%'),
+        width:wp('85%'),
+        backgroundColor:'rgb(245,245,245)',
+        marginTop:15,
+        elevation:10,
+        borderRadius:15,
+        alignSelf:'center',
     },
     BtnCard: {
-        marginTop:5,
-        marginBottom:-60,
-        height:hp('12%'),
+        marginTop:15,
+        height:hp('15%'),
         width:wp('85%'),
         borderRadius:15,
         backgroundColor:'rgb(245,245,245)',
         elevation:10,
-    },
-    BtnView: { 
-        justifyContent:'center',
-        alignItems:'center',
-        flex:1,
-    },
-    BottomBtnProgress: {
-        flexDirection: 'row',
+        alignSelf:'center',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'flex-end',
+
     },
     BtnGradiant: {
         height:hp('8%'),
         width:wp('38%'),
         borderRadius:20,
-        marginLeft:7,
-        
-    },
-    Btn: {
-        height:hp('8%'),
-        width:wp('38%'),
-        borderRadius:20,
-        justifyContent:'center',
         alignSelf:'center',
     },
-    BtnText1: {
-        marginLeft:30,
-        fontSize:18,
+    BtnEdit: {
+        marginLeft:26,
+        marginTop:18,
+    },
+    BtnView: {
+        marginLeft:38,
+        marginTop:18,
+    },
+    BtnsText: {
+        fontSize:20,
         fontWeight:'bold',
         color:'white',
-        borderRadius:15,
     },
-    BtnText2: {
-        marginLeft:42,
-        fontSize:18,
+    HeadText: {
+        marginLeft:15,
+        marginTop:10,
+        fontSize:15,
         fontWeight:'bold',
-        color:'white',
-        borderRadius:15,
+        color:'rgba(0,0,0,0.3)'
     },
+    DisplayFeild1: {
+        height:hp('34%'),
+        width:wp('80%'),
+        marginTop:5,
+        alignSelf:'center',
+        elevation:1,
+        borderRadius:15,
+        backgroundColor:'rgb(245,245,245)',
+    },
+    DisplayFeild2: {
+        height:hp('27.5%'),
+        width:wp('80%'),
+        marginTop:5,
+        alignSelf:'center',
+        elevation:1,
+        borderRadius:15,
+        backgroundColor:'rgb(245,245,245)',
+    },
+    DisplayFeild3: {
+        height:hp('40.5%'),
+        width:wp('80%'),
+        marginTop:5,
+        alignSelf:'center',
+        elevation:1,
+        borderRadius:15,
+        backgroundColor:'rgb(245,245,245)',
+    },
+    inputField: {
+        width:wp('78%'),
+        height:hp('6%'),
+        fontSize:15,
+        marginTop:5,
+        marginLeft:5,
+        backgroundColor: 'rgba(230,230,230,0.4)',
+        borderColor: 'rgba(245,245,245,0.2)',
+    }
+    
 })
